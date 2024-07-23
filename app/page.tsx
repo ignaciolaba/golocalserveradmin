@@ -1,30 +1,38 @@
 'use client'
-import styles from "./page.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import styles from './page.module.css';
+import { getData } from './api/colohouse';
 
-export default function Home() {
-  const [data, setData] = useState([]);
+interface ControlledClientData {
+  id: string;
+  name: string;
+  // Agrega los campos adicionales que sean necesarios
+}
+
+const Home = () => {
+  const [data, setData] = useState<ControlledClientData | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch('/api/colohouse');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-      }
-    }
-
-    fetchData();
+    getData()
+      .then((data: any) => setData(data))
+      .catch((error: any) => setError(error.message));
   }, []);
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <main className={styles.main}>     
-        {data}
+    <main className={styles.main}>
+      <h1>Prueba</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </main>
   );
 }
+
+export default Home;
