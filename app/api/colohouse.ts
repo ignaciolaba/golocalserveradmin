@@ -4,7 +4,6 @@ export async function getData() {
     headers: {
       accept: 'application/json',
       'x-api-key': process.env.API_KEY as string,
-      'Access-Control-Allow-Origin': '*',
     },
   });
 
