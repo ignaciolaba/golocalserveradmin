@@ -9,6 +9,7 @@ interface ControlledClientData {
   // Agrega los campos adicionales que sean necesarios
 }
 
+
 const Home = () => {
   const [data, setData] = useState<ControlledClientData | null>(null);
   const [error, setError] = useState<string | null>(null);

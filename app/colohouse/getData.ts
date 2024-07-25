@@ -1,5 +1,5 @@
 export async function getData() {
-    const res = await fetch('/api/proxy', {
+    const res = await fetch('/api/route', {
       method: 'GET',
     });
   
