@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
-import { getData } from './colohouse/colohouseGetData';
+import { getData } from './colohouse/route';
 
 interface ControlledClientData {
   id: string;
