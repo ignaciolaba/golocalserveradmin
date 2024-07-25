@@ -1,5 +1,5 @@
 export async function getData() {
-  const res = await fetch('https://core.hivelocity.net/api/v2/account/controlled-client', {
+  const res = await fetch('https://core.hivelocity.net/api/v2/inventory/locations', {
     method: 'GET',
     headers: {
       accept: 'application/json',
