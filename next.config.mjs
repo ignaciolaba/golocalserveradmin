@@ -18,4 +18,7 @@ const nextConfig = {
     }
 }
 
-module.exports = nextConfig
+module.exports = {
+    nextConfig,
+    serverModuleFormat: 'cjs',
+  }
