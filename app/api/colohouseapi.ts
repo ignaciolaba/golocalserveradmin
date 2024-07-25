@@ -1,6 +1,6 @@
 // pages/api/your-endpoint.ts
 
-export default function handler(req: , res) {
+export default function handler(req: any , res: any) {
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Access-Control-Allow-Origin', '*'); // Reemplaza '*' con tu dominio en producción
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
