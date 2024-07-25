@@ -15,8 +15,7 @@ const nextConfig = {
                 ]
             }
         ]
-    },
-    serverModuleFormat: 'cjs',
+    }
 }
 
-module.exports = nextConfig;
+export default nextConfig;
