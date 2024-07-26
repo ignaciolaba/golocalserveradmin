@@ -13,7 +13,7 @@ export default async function getData() {
       }
   
       const data = await fetch('https://core.hivelocity.net/api/v2/account/controlled-client');
-      return data;
+      return data.json();
     } catch (error) {
       console.error('Error fetching data:', error);
       throw error;
