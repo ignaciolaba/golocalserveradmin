@@ -1,7 +1,7 @@
 // colohouse/getData.ts
 export default async function getData() {
     try {
-      const response = await fetch('api/colohouse', {
+      const response = await fetch('/api/colohouse', {
         method: 'GET',
         headers: {
           accept: 'application/json',
