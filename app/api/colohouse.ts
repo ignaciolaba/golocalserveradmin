@@ -12,5 +12,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return;
   }
 
-  res.status(200).json({ message: 'Hello, Next.js!' });
+  try {
+    const response = await fetch('https://core.hivelocity.net/api/v2/account/controlled-client', {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        'x-api-key': process.env.API_KEY as string,
+      },
+    });
+
+    if (!response.ok) {
+      res.status(response.status).json({ error: 'Failed to fetch data' });
+      return;
+    }
+
+    const controlledClientData = await response.json();
+    res.status(200).json(controlledClientData);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 }
