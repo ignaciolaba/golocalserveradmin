@@ -1,7 +1,6 @@
 // pages/index.tsx
 'use client'
 import { useEffect, useState } from 'react';
-import styles from './page.module.css';
 import getData from './colohouse/getData';
 
 interface ControlledClientData {
@@ -29,7 +28,7 @@ const Home = () => {
   }
 
   return (
-    <main className={styles.main}>
+    <main>
       <h1>Prueba</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </main>
