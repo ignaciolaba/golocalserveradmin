@@ -1,7 +1,8 @@
+// pages/index.tsx
 'use client'
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
-import  getData  from './colohouse/getData';
+import getData from './colohouse/getData';
 
 interface ControlledClientData {
   id: string;
@@ -9,15 +10,14 @@ interface ControlledClientData {
   // Agrega los campos adicionales que sean necesarios
 }
 
-
 const Home = () => {
   const [data, setData] = useState<ControlledClientData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     getData()
-      .then((data: any) => setData(data))
-      .catch((error: any) => setError(error.message));
+      .then((data) => setData(data))
+      .catch((error) => setError(error.message));
   }, []);
 
   if (error) {
