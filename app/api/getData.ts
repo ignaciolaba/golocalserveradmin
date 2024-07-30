@@ -11,7 +11,7 @@ export default async function getData() {
       });
   
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+    console.log('Failed to fetch data');
       }
   
       return await response.json();

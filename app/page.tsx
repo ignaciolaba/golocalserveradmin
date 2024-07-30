@@ -1,7 +1,7 @@
 // pages/index.tsx
 'use client'
 import { useEffect, useState } from 'react';
-import getData from './colohouse/getData';
+import getData from './api/getData';
 
 interface ControlledClientData {
   id: string;
