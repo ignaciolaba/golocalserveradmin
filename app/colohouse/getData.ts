@@ -1,10 +1,12 @@
-// colohouse/getData.ts
+'use server'
+
 export default async function getData() {
     try {
-      const response = await fetch('/api/colohouse', {
+      const response = await fetch('https://core.hivelocity.net/api/v2/account/controlled-client', {
         method: 'GET',
         headers: {
           accept: 'application/json',
+          'x-api-key': process.env.API_KEY as string,
         },
       });
   
@@ -12,8 +14,7 @@ export default async function getData() {
         throw new Error('Failed to fetch data');
       }
   
-      const data = await fetch('https://core.hivelocity.net/api/v2/account/controlled-client');
-      return data.json();
+      return await response.json();
     } catch (error) {
       console.error('Error fetching data:', error);
       throw error;
