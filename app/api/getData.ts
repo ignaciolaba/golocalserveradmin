@@ -2,7 +2,7 @@
 
 export default async function getData() {
     try {
-      const response = await fetch('https://core.hivelocity.net/api/v2/account/controlled-client', {
+      const response = await fetch('https://core.hivelocity.net/api/v2/profile/basic', {
         method: 'GET',
         headers: {
           accept: 'application/json',
