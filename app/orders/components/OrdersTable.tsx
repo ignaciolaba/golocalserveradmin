@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { Order } from '../types/types'; // Asegúrate de tener este tipo definido

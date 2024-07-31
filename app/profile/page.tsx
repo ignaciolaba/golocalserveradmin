@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from "react";
 import { getProfileBasic } from "../api/getData";
 
@@ -29,7 +30,7 @@ const ProfilePage = () => {
         <div>
             <h1>Profile Page</h1>
             <pre>{JSON.stringify(profileBasic, null, 2)}</pre>
-            
+
         </div>
     )
 }
