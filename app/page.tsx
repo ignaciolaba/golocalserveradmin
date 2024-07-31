@@ -21,30 +21,10 @@ const Home = () => {
     getProfileBasic()
       .then((profileBasic: any) => setProfileBasic(profileBasic))
       .catch((errorProfileBasic: any) => setErrorProfileBasic(errorProfileBasic.message));
-  }, []);
-
-  if (errorProfileBasic) {
-    return <div>Error: {errorProfileBasic}</div>;
-  }
-
-  if (!profileBasic) {
-    return <div>Loading...</div>;
-  }
-
-  useEffect(() => {
-    getOrders()
+      getOrders()
       .then((orders: any) => setOrders(orders))
       .catch((errorOrders: any) => setErrorOrders(errorOrders.message));
   }, []);
-
-  if (errorOrders) {
-    return <div>Error: {errorOrders}</div>;
-  }
-
-  if (!orders) {
-    return <div>Loading...</div>;
-  }
-  
 
   return (
     <main>
